@@ -10,6 +10,8 @@ python finetune.py --model_name_or_path Helsinki-NLP/opus-mt-en-zh\
 
 The `test.py` returns the bertScore and a `.csv` file contain the corresponding referenced transaltion and generated translation, as well as the score.
 
+To load from hugging face, replace the model name with `SFZheng7/MarianMT-Finetuned`
+
 If you don't directly copy the repo, please pay attention to the file path.
 
 

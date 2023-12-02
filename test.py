@@ -7,7 +7,8 @@ import time
 bertscore = None
 model = None
 tokenizer = None
-
+# enter the model name here "Helsinki-NLP/opus-mt-en-zh" for baseline, and the checkpoint dir path if used the fine tuned one
+model name = "Helsinki-NLP/opus-mt-en-zh"
 
 
 def check_model_exists(model_name):

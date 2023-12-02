@@ -12,7 +12,10 @@ The `test.py` returns the bertScore and a `.csv` file contain the corresponding 
 
 If you don't directly copy the repo, please pay attention to the file path.
 
-TO DO:
+
+
+**TO DO:**
+
 Load fine tuned version From HuggingFace (回头就搞)
 
 前后端 （不会）

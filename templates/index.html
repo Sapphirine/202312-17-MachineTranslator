@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Translator</title>
+    <link rel="shortcut icon" href="#" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    h2, h3, input, p, button, #loading {
+        margin: 10px;
+    }
+    h2{
+        font-size:40px;
+    }
+    h3{
+        font-size:20px;
+        height: 100px;
+    }
+    input[type="text"] {
+        width: 1000px;
+        font-size: 25px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 25px;
+        padding: 10px 20px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+</style>
+</head>
+<body>
+    <h2>Translator</h2>
+    <h3>Fine-tuned</h3>
+    <input type="text" name="input_sentence" id="input_sentence"></input>
+    <p name="output_sentence" id="output_sentence"></p>
+    <button id="button">submit</button>
+    <div id="loading" style="display: none;">
+        Translating...
+    </div>
+    <script>
+        $(document).ready(function(){
+            function translateText() {
+                $("#loading").show();
+                $.post("/translate", {
+                    "sentence": $("#input_sentence").val(),
+                }, function(data, status) {
+                    $("#output_sentence").text(data.sentence);
+                    $("#loading").hide();
+                });
+            }
+
+            $(document).on('click', '#button', function() {
+                translateText();
+            });
+        });
+
+    </script>
+</body>
+</html>
+
+<!--Like Siegfried Sassoon, Schuster was of Jewish descent.-->
